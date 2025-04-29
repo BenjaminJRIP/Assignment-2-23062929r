@@ -111,9 +111,14 @@ This discussion is based on the “OpenSky” dataset, which comprises 926 measu
 For the Weighted Least Squares (WLS) positioning mode, the system is configured by setting (for example) settings.sys.lstype = 1 (in some implementations this might appear as ls_type in a file such as “Task2.m”). The core weighted RAIM algorithm is implemented in “calcPosLSE.m” and is supported by functions such as chi2_detector.m and PLcompute.m.
 
 ### 1. Weighted Position Estimation
-The estimated weighted position X is computed by the standard WLS expression:
-
-$$ 
-\mathbf{X} = \left(\mathbf{G}{-1}\mathbf{G}^T \mathbf{W} \mathbf{Y} 
+The estimated weighted position \(\mathbf{X}\) is computed by the standard WLS expression:
 $$
+\mathbf{X} = \left(\mathbf{G}^T \mathbf{W} \mathbf{G}\right)^{-1}\mathbf{G}^T \mathbf{W} \mathbf{Y}
+$$
+
+where:
+- \(\mathbf{G}\) is the geometry (design) matrix,
+- \(\mathbf{W}\) is the weighting matrix, and
+- \(\mathbf{Y}\) is the vector of measurement observations.
+
 
