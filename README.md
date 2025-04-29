@@ -1,7 +1,7 @@
 # Assignment 2 - 23062929r 
 IP Chun Man Ben 23062929r
 
-
+---
 ### Model: ChatGPT 4o
 #### Prompt:
 
@@ -38,8 +38,9 @@ discuss trade-offs between benefits and drawbacks (such as cost versus performan
 It’s smart and great for reasoning and answering questions. It outperforms other ai model.
 
 #### The chatroom link: 
+https://github.com/BenjaminJRIP/Assignment-2-23062929r/blob/a3fdfe20727c9d9432c22d94d2210444d152f3d1/chathistory.txt
 
-
+---
 ## Task 1 – Differential GNSS Positioning (word:977)
 Smartphone navigation has become an indispensable part of our daily lives, driving an increasing need for enhanced accuracy and reliability in positioning technologies. As global positioning accuracy requirements expand—in applications ranging from everyday mapping to precision-demanding tasks like augmented reality or autonomous navigation—a range of GNSS techniques have emerged. Among these, Differential GNSS (DGNSS), Real-Time Kinematic (RTK), Precise Point Positioning (PPP), and the hybrid PPP-RTK are the most frequently compared [3]. Each method brings its unique balance of benefits and challenges, and understanding these nuances is key to making an informed decision for application development.
 
