@@ -2,7 +2,7 @@
 IP Chun Man Ben 23062929r
 
 
-Model: ChatGPT 4o
+###### Model: ChatGPT 4o
 Prompt:
 Task1
 list the pros and cons for the following GNSS techniques: Differential GNSS (DGNSS), Real-Time Kinematic (RTK), Precise Point Positioning (PPP), and PPP-RTK for smartphone navigation
