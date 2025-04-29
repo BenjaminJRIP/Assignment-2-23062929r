@@ -111,13 +111,24 @@ This discussion is based on the “OpenSky” dataset, which comprises 926 measu
 For the Weighted Least Squares (WLS) positioning mode, the system is configured by setting (for example) settings.sys.lstype = 1 (in some implementations this might appear as ls_type in a file such as “Task2.m”). The core weighted RAIM algorithm is implemented in “calcPosLSE.m” and is supported by functions such as chi2_detector.m and PLcompute.m.
 
 ### 1. Weighted Position Estimation
-The estimated weighted position \(\mathbf{X}\) is computed by the standard WLS expression:
-$$ \hat{\mathbf{x}} = \left(\mathbf{G}{-1} \mathbf{G}^T, \mathbf{W}, \mathbf{Y} $$
+The estimated weighted position $\boldsymbol{X}$ is computed by the standard WLS expression:
 
+$\boldsymbol{X} = (G^T W G)^{-1} G^T W \boldsymbol{Y}$
 
 where:
-- \(\mathbf{G}\) is the geometry (design) matrix,
-- \(\mathbf{W}\) is the weighting matrix, and
-- \(\mathbf{Y}\) is the vector of measurement observations.
+- $\boldsymbol{G}$ is the geometry (design) matrix,
+- $\boldsymbol{W}$ is the weighting matrix, and
+- $\boldsymbol{Y}$ is the vector of measurement observations.
 
+### 2. WSSE Test Statistic and Detection Threshold
+The WSSE (Weighted Sum of Squared Errors) is calculated as:
 
+$WSSE = \sqrt{\boldsymbol{Y}^T W (I - P) \boldsymbol{Y}}$
+
+with the projection matrix defined by:
+
+$\mathbf{P} = \mathbf{G}\left(\mathbf{G}{-1}\mathbf{G}^T\mathbf{W}$
+
+The detection threshold, (T), is derived from the Chi-square distribution as
+
+$T(N, P_{FA}) = \sqrt{Q_{\chi^2, N-4}(1 - P_{FA})}$
