@@ -127,8 +127,20 @@ $WSSE = \sqrt{\boldsymbol{Y}^T W (I - P) \boldsymbol{Y}}$
 
 with the projection matrix defined by:
 
-$\mathbf{P} = \mathbf{G}\left(\mathbf{G}{-1}\mathbf{G}^T\mathbf{W}$
+${P} = {G}\left(\mathbf{G}{-1}\mathbf{G}^T\mathbf{W}$
 
 The detection threshold, (T), is derived from the Chi-square distribution as
 
 $T(N, P_{FA}) = \sqrt{Q_{\chi^2, N-4}(1 - P_{FA})}$
+
+where (N) is the number of observations, $(P_{FA})$ is the predefined false alarm probability, and $Q_{\chi^2, N-4}(\cdot)$ denotes the quantile function for a Chi-square distribution with (N-4) degrees of freedom.
+
+### 3. Protection Level (PL) Calculation
+For integrity monitoring, a key parameter is the three-dimensional protection slope. For each satellite ($i$), the protection slope is computed as:
+
+$\text{Pslope} = \frac{\sqrt{(K^2_{1,i} + K^2_{2,i} + K^2_{3,i})}}{\sqrt{W_{ii}(1 - P_{ii})}}$
+
+where:
+•	$(K_{j,i})$ (for $(j=1,2,3)$) represents the sensitivity of the ($i$)th measurement along the three spatial axes,
+•	$(W_{ii})$ is the ($i$)th diagonal element of the weighting matrix, and
+•	$(P_{ii})$ is the ($i$)th diagonal element of the projection matrix.
