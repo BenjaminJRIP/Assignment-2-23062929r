@@ -141,6 +141,30 @@ For integrity monitoring, a key parameter is the three-dimensional protection sl
 $\text{Pslope} = \frac{\sqrt{(K^2_{1,i} + K^2_{2,i} + K^2_{3,i})}}{\sqrt{W_{ii}(1 - P_{ii})}}$
 
 where:
-•	$(K_{j,i})$ (for $(j=1,2,3)$) represents the sensitivity of the ($i$)th measurement along the three spatial axes,
-•	$(W_{ii})$ is the ($i$)th diagonal element of the weighting matrix, and
-•	$(P_{ii})$ is the ($i$)th diagonal element of the projection matrix.
+- $(K_{j,i})$ (for ($j$=1,2,3)) represents the sensitivity of the ($i$)th measurement along the three spatial axes,
+- $(W_{ii})$ is the ($i$)th diagonal element of the weighting matrix, and
+- $(P_{ii})$ is the ($i$)th diagonal element of the projection matrix.
+
+By integrating the computed protection slopes with the detection threshold, the overall three-dimensional Protection Level (PL) is formulated as:
+
+$\text{PL} = max[\text{Pslope}] T(N, P_{FA}) + k(P_{MD})\sigma$
+
+with:
+- $\sigma = 3\text{m}$ (the assumed measurement noise standard deviation in three dimensions), and
+- $k(P_{MD}) = Q_N (1 - \frac{P_{MD}}{2})$ where $(Q_{N}(\cdot))$ denotes the standard normal quantile function; $(P_{MD})$ is the missed detection probability risk.
+
+### Performance Assessment
+Two RAIM configurations are compared against conventional positioning methods:
+
+### 1. Classical RAIM (for OLS positioning)
+
+- Some epochs show WSSE test statistics (depicted as a blue curve in performance charts) that exceed the threshold (red curve).
+- In these epochs, further analysis during the fault isolation phase consistently indicates the presence of two potential faulty measurements among the nine available signals, making it impossible to isolate a single error.
+- Consequently, the positioning solution for these epochs is aborted, and no Protection Level (PL) is calculated.
+- For the epochs where a solution is computed, all resulting PLs fall below the established Alert Limit (AL) of 50 meters.
+
+### 2. Weighted RAIM (for WLS positioning)
+
+- The weighting scheme successfully reduces the WSSE across all 926 epochs so that the test statistic remains below the threshold for every measurement epoch.
+- No fault detection or isolation is necessary, and positioning is successfully computed for every epoch.
+- The calculated PLs for all epochs are well within the Alert Limit, as confirmed by the corresponding Stanford chart representations.
