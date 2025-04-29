@@ -39,3 +39,11 @@ It’s smart and great for reasoning and answering questions. It outperforms oth
 
 #### The chatroom link: 
 
+
+## Task 1 – Differential GNSS Positioning (word:977)
+Smartphone navigation has become an indispensable part of our daily lives, driving an increasing need for enhanced accuracy and reliability in positioning technologies. As global positioning accuracy requirements expand—in applications ranging from everyday mapping to precision-demanding tasks like augmented reality or autonomous navigation—a range of GNSS techniques have emerged. Among these, Differential GNSS (DGNSS), Real-Time Kinematic (RTK), Precise Point Positioning (PPP), and the hybrid PPP-RTK are the most frequently compared [3]. Each method brings its unique balance of benefits and challenges, and understanding these nuances is key to making an informed decision for application development.
+
+My summary table for the properties of the four GNSS techniques for smartphone navigation [1][2][3]
+
+
+
