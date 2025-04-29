@@ -112,5 +112,8 @@ For the Weighted Least Squares (WLS) positioning mode, the system is configured 
 
 ### 1. Weighted Position Estimation
 The estimated weighted position X is computed by the standard WLS expression:
-$$ \mathbf{X} = \left(\mathbf{G}{-1}\mathbf{G}^T \mathbf{W} \mathbf{Y} $$
+
+$$ 
+\mathbf{X} = \left(\mathbf{G}{-1}\mathbf{G}^T \mathbf{W} \mathbf{Y} 
+$$
 
