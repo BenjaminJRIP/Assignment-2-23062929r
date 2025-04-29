@@ -90,3 +90,26 @@ Analysis performed on an urban dataset comprising 839 epochs revealed key insigh
 
 - **Availability Considerations:**  
   In the specific urban dataset evaluated, both the standard and the skymask-enhanced methods yielded a solution for all 839 epochs, ensuring 100% solution availability. However, theoretically, there may be epochs where skymask filtering results in fewer than four viable satellites, thereby preventing a solution from being computed. This potential drawback underscores the need for balance between filtering rigor and satellite availability.
+
+The comparison for positioning between OLS with skymask-filtering (red) and without skymask-filtering (blue)
+![image](https://github.com/BenjaminJRIP/Assignment-2-23062929r/blob/3a71cf53224129e59d84404a9e75c5e7bc570a56/2.png)
+
+### Concluding Remarks
+The skymask application represents a meticulous tradeoff: while filtering out non-LOS signals enhances measurement precision by excluding bad-quality transmissions, it simultaneously risks degrading the positioning solution’s overall (especially 3D) accuracy due to diminished vertical geometry. In practice, this approach can be highly effective in environments with abundant satellite signals, as evidenced by the 839-epoch urban dataset, yet it carries inherent challenges in scenarios where satellite visibility is more limited.
+
+This discussion encapsulates both the theoretical underpinnings and practical impacts of skymask filtering on GNSS positioning. A flowchart summarizing these processes could further illustrate the decision points—from satellite measurement through filtering to position computation—providing a clear visual aid to accompany this analysis. 
+
+## Task 3
+This discussion is based on the “OpenSky” dataset, which comprises 926 measurement epochs. In each epoch, 9 satellite signals are received. The Receiver Autonomous Integrity Monitoring (RAIM) scheme is implemented in two stages:
+1. **Fault Detection:**  
+   The algorithm first performs a detection step. A weighted statistical metric—the Weighted Sum of Squared Errors (WSSE)—is used to assess the consistency of the available measurements. If the WSSE exceeds a predetermined threshold, this flags the possibility of one or more faulty measurements.
+
+2. **Fault Isolation:**  
+   When a single faulty measurement is identified, the RAIM process attempts to isolate (remove) that measurement. The positioning is then recalculated using the remaining observations. However, if isolation is not possible (as in cases where two or more faults are consistently present), the positioning solution for that epoch is aborted.
+
+### Implementation Note:
+For the Weighted Least Squares (WLS) positioning mode, the system is configured by setting (for example) settings.sys.lstype = 1 (in some implementations this might appear as ls_type in a file such as “Task2.m”). The core weighted RAIM algorithm is implemented in “calcPosLSE.m” and is supported by functions such as chi2_detector.m and PLcompute.m.
+
+### 1. Weighted Position Estimation
+The estimated weighted position X is computed by the standard WLS expression:
+[ \mathbf{X} = \left(\mathbf{G}{-1}\mathbf{G}^T \mathbf{W} \mathbf{Y} ]
