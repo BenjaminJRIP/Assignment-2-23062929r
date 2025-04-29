@@ -59,8 +59,11 @@ When evaluating these techniques for smartphone navigation, context is essential
 In summary, the selection of the optimal GNSS technique for smartphone navigation ultimately depends on the specific demands of the application. DGNSS provides a simple yet effective enhancement over basic GNSS, while RTK pushes the boundaries of accuracy and immediacy for high-stakes scenarios. PPP offers the advantage of global coverage with minimal local infrastructure, and PPP-RTK emerges as a hybrid solution that promises to deliver the best of both worlds with rapid convergence and high precision. As advancements in sensor technologies, machine learning, and data fusion continue, future navigation systems will likely integrate these methodologies even further, creating opportunities for smarter, more adaptive positioning technologies. This nuanced analysis not only highlights the strengths and drawbacks of each approach but also provides a framework to outperform similar AI-generated responses by offering deeper insight, contextual understanding, and a forward-looking perspective on the evolution of GNSS technologies for smartphone navigation.
 
 Reference
+
 [1] P. Misra and P. Enge, *Global positioning system: signals measurements*, 2011.
+
 [2] H. Sharma, A. Schütz, and T. Pany, "Preliminary analysis of the RTK positioning using Android GNSS Raw Measurements and Application Feasibility for the Trajectory mapping using UAV’s," in *Proc. 31st International Technical Meeting of the Satellite Division of the Institute of Navigation (ION GNSS+ 2018)*, Sept. 2018, pp. 432–444.
+
 [3] J. Geng, F. N. Teferle, X. Meng, and A. H. Dodson, “Towards PPP-RTK: Ambiguity resolution in real-time precise point positioning,” *Advances in Space Research*, vol. 47, no. 10, pp. 1664–1673, 2011.
 
 ## Task 2
@@ -92,6 +95,7 @@ Analysis performed on an urban dataset comprising 839 epochs revealed key insigh
   In the specific urban dataset evaluated, both the standard and the skymask-enhanced methods yielded a solution for all 839 epochs, ensuring 100% solution availability. However, theoretically, there may be epochs where skymask filtering results in fewer than four viable satellites, thereby preventing a solution from being computed. This potential drawback underscores the need for balance between filtering rigor and satellite availability.
 
 The comparison for positioning between OLS with skymask-filtering (red) and without skymask-filtering (blue)
+
 ![image](https://github.com/BenjaminJRIP/Assignment-2-23062929r/blob/3a71cf53224129e59d84404a9e75c5e7bc570a56/2.png)
 
 ### Concluding Remarks
