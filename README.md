@@ -1,9 +1,8 @@
-# AAE6102 Satellite Communication and Navigation
-# Assignment 2
-# IP Chun Man Ben 23062929r
+# Assignment 2 - 23062929r 
+IP Chun Man Ben 23062929r
 
 
-# Model: ChatGPT 4o
+Model: ChatGPT 4o
 Prompt:
 Task1
 list the pros and cons for the following GNSS techniques: Differential GNSS (DGNSS), Real-Time Kinematic (RTK), Precise Point Positioning (PPP), and PPP-RTK for smartphone navigation
